@@ -16,21 +16,20 @@ public class BackgroundDeleter {
 			Stack<String> popcorn= new Stack();
 			Stack<File> osus=locateOSU(songDir[z]);
 			while(!osus.isEmpty()){
+				System.out.println(osus.peek().getAbsolutePath());
 				Stack<String> temp = (scanOSUFile(osus.pop().getAbsolutePath()));
 				while(!temp.isEmpty()){
-					popcorn.push(temp.peek());
-					temp.pop();
+					popcorn.push(temp.pop());
+					
 				}
 			}
-			//System.out.println("Scanning: "+locateOSU(songDir[z]).getAbsolutePath());
-			//Stack<String> popcorn = scanOSUFile(locateOSU(songDir[z]).getAbsolutePath());
-			
+
 			while(!popcorn.isEmpty()){
 				File toDelete = new File(Data.osuPath()+"//Songs//"+songDir[z]+"//"+popcorn.pop());
 				if(toDelete.delete()){
 	    			System.out.println(toDelete.getName() + " DELETED!");
 	    		}else{
-	    			System.out.println("Did not delete "+toDelete.getName());
+	    			//System.out.println("Did not delete "+toDelete.getName());
 	    		}
 			}
 
@@ -75,7 +74,7 @@ public class BackgroundDeleter {
 			Scanner reader = new Scanner(new FileReader(osuFile));
 			while(reader.hasNextLine()){
 				String data=reader.nextLine();
-				if(data.contains("\"")){
+				if(data.contains("0,0,\"")){
 					int startIndex = data.indexOf("\""); int endIndex = data.lastIndexOf("\"");
 					String thefile =data.substring(startIndex+1, endIndex);
 					result.push(thefile);
