@@ -1,0 +1,21 @@
+SkuzzClient
+
+Config
+	config.txt hold config data
+	Need a stripper that removes anything in [Brackets]
+	A data loader that can read config data and load it in static variables.
+	
+	Contents of config.txt
+		OSUPATH
+			Default path is C:\Program Files (x86)\osu!
+ but test for osu.exe if osu.exe does not exist then ask user for input
+
+
+
+Background
+	Get Contents of Song folder in array
+	Feed the path to the song folders and find *.osu files. 
+	Read *.osu file and attemp to find "" 
+	Take a substring of the desired part
+	Test if there is a file that exists with the name
+	Move file to desired area and delete file
