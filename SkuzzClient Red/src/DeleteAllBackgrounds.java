@@ -19,9 +19,6 @@ public class DeleteAllBackgrounds {
 		
 		File songFolder = new File(Data.osuPath()+"\\Songs");
 		File[] result = songFolder.listFiles();
-		//for(int x=0;x<result.length;x++){
-		//	System.out.println(result[x].getAbsolutePath());
-		//}
 		return result;
 
 	}
@@ -33,7 +30,6 @@ public class DeleteAllBackgrounds {
 				File[] listOfFiles = songFile.listFiles(); 
 				for(File innerFiles : listOfFiles){
 					if (innerFiles.getName().endsWith(".osu")){
-						//System.out.println("Got To Here "+innerFiles.getAbsolutePath()); REMOVE
 						result.push(innerFiles);
 					}
 				}
@@ -76,13 +72,6 @@ public class DeleteAllBackgrounds {
 			
 			elementPathFile.renameTo(target);
 
-			//System.out.println(elementPath);
-			
-			//if(elementPathFile.delete()){
-	    	//	System.out.println(elementPathFile.getName() + " DELETED!");
-	    	//}else{
-	    	//	//System.out.println("Did not delete "+toDelete.getName());
-	    	//}
 		}
 	}
 	

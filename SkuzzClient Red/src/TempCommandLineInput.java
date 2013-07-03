@@ -17,12 +17,17 @@ public class TempCommandLineInput {
 					exitCommandExecuted=true;
 					break;
 				case "delbgs":
+					System.out.println("Please Wait...");
 					DeleteAllBackgrounds delbg = new DeleteAllBackgrounds();
 					delbg = null;
 					System.out.println("All backgounds have been stripped from folders.");
 					break;
-				case "restoreall":
-					//RESTORE BACKGROUND CODE HERE
+				case "rbgs":
+					System.out.println("Please Wait...");
+					RestoreAllBackgrounds rbgs = new RestoreAllBackgrounds();
+					rbgs = null;
+					System.out.println("Backgrounds Have Been Restored");
+					
 					break;
 				default:
 					System.out.println("ERROR: Cannot interpret command.");
