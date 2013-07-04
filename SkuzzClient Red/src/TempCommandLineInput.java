@@ -27,7 +27,12 @@ public class TempCommandLineInput {
 					RestoreAllBackgrounds rbgs = new RestoreAllBackgrounds();
 					rbgs = null;
 					System.out.println("Backgrounds Have Been Restored");
-					
+					break;
+				case "ripall":
+					System.out.println("Please Wait...");
+					ripSongs ripper = new ripSongs();
+					ripper=null;
+					System.out.println("Done Ripping");
 					break;
 				default:
 					System.out.println("ERROR: Cannot interpret command.");
