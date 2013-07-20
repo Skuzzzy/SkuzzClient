@@ -13,7 +13,7 @@ public class ripSongs {
 		
 	File[] allSongs = SongFolders();
 	
-	File songRip = new File(Data.osuPath()+"\\SongRips");
+	File songRip = new File(Data.osuPath()+"\\OSU! Songs");
 	songRip.mkdirs();
 	
 		for(File chosenSong : allSongs){
@@ -31,8 +31,8 @@ public class ripSongs {
 				int index=infoStuff[0].lastIndexOf(".");
 				String extension = infoStuff[0].substring(index);
 	
-				infoStuff[2]=infoStuff[2].replace("*", "").replace("?", "");
-				infoStuff[1]=infoStuff[1].replace("*", "").replace("?", "");
+				infoStuff[2]=infoStuff[2].replace("*", ".").replace("?", ".").replace("\\", ".").replace("<", ".").replace(">", ".").replace("/", ".").replace("|", ".").replace("\"", ".");
+				infoStuff[1]=infoStuff[1].replace("*", ".").replace("?", ".").replace("\\", ".").replace("<", ".").replace(">", ".").replace("/", ".").replace("|", ".").replace("\"", ".");
 				
 				File origMpthree = new File(chosenSong.getAbsolutePath()+"\\"+infoStuff[0]);//FROM
 				
