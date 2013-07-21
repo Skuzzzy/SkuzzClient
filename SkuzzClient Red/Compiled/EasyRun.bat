@@ -1,3 +1,0 @@
-@ECHO OFF
-java Run
-PAUSE
